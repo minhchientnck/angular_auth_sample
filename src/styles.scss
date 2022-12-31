@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  src: url('../fonts/UbuntuCondensed-Regular.ttf') format('woff2');
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Ubuntu Condensed', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  margin: 0; 
+  padding: 0; 
+}
+
+.column-1 {
+  flex: 0 0 auto;
+  width: 8.333333333333334%
+}
+
+.column-2 {
+  flex: 0 0 auto;
+  width: 16.666666666666668%
+}
+
+.column-3 {
+  flex: 0 0 auto;
+  width: 25%
+}
+
+.column-4 {
+  flex: 0 0 auto;
+  width: 33.333333333333336%
+}
+
+.column-5 {
+  flex: 0 0 auto;
+  width: 41.66666666666667%
+}
+
+.column-6 {
+  flex: 0 0 auto;
+  width: 50%
+}
+
+.column-7 {
+  flex: 0 0 auto;
+  width: 58.333333333333336%
+}
+
+.column-8 {
+  flex: 0 0 auto;
+  width: 66.66666666666667%
+}
+
+.column-9 {
+  flex: 0 0 auto;
+  width: 75%
+}
+
+.column-10 {
+  flex: 0 0 auto;
+  width: 83.33333333333334%
+}
+
+.column-11 {
+  flex: 0 0 auto;
+  width: 91.66666666666667%
+}
+
+.column-12 {
+  flex: 0 0 auto;
+  width: 100%
+}
