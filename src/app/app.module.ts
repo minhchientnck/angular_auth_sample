@@ -16,6 +16,7 @@ import { ContactComponent } from './components/main-view/contact/contact.compone
 import { JobHistoryComponent } from './components/main-view/job-history/job-history.component';
 import { UploadDocumentComponent } from './components/main-view/upload-document/upload-document.component';
 import { ChangePictureComponent } from './components/main-view/change-picture/change-picture.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ChangePictureComponent } from './components/main-view/change-picture/ch
     ChangePictureComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

@@ -14,6 +14,7 @@ import { RequestService } from 'src/app/services/request.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { NavBars } from './nav-bars';
 
 @Component({
   selector: 'app-main-view',
@@ -31,6 +32,8 @@ export class MainViewComponent implements OnInit {
   faImages = faImages;
   faSignOutAlt = faSignOutAlt;
   faBars = faBars;
+
+  NavBars = NavBars;
   selectedTab = 'personal';
   isActive = true;
   isExpand = false;
@@ -40,7 +43,12 @@ export class MainViewComponent implements OnInit {
   constructor(
     private requestService: RequestService,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router) {
+    this.selectedTab = this.router.url.replace(/\/#?/, '');
+    if (!this.selectedTab) {
+      this.selectedTab = 'personal';
+    }
+  }
 
   ngOnInit(): void {
     this.infoSubscription = this.requestService.getData(`http://localhost:5000/my-info`)
@@ -48,9 +56,8 @@ export class MainViewComponent implements OnInit {
   }
 
   ngDoCheck() {
-    this.selectedTab = this.router.url.replace(/\/#?/, '');
-    if (!this.selectedTab) {
-      this.selectedTab = 'personal';
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigateByUrl('/login');
     }
   }
 

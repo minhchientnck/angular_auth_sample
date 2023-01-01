@@ -25,62 +25,72 @@ body {
   padding: 0; 
 }
 
-.column-1 {
+.col-md-1 {
   flex: 0 0 auto;
   width: 8.333333333333334%
 }
 
-.column-2 {
+.col-md-2 {
   flex: 0 0 auto;
   width: 16.666666666666668%
 }
 
-.column-3 {
+.col-md-3 {
   flex: 0 0 auto;
   width: 25%
 }
 
-.column-4 {
+.col-md-4 {
   flex: 0 0 auto;
   width: 33.333333333333336%
 }
 
-.column-5 {
+.col-md-5 {
   flex: 0 0 auto;
   width: 41.66666666666667%
 }
 
-.column-6 {
+.col-md-6 {
   flex: 0 0 auto;
   width: 50%
 }
 
-.column-7 {
+.col-md-7 {
   flex: 0 0 auto;
   width: 58.333333333333336%
 }
 
-.column-8 {
+.col-md-8 {
   flex: 0 0 auto;
   width: 66.66666666666667%
 }
 
-.column-9 {
+.col-md-9 {
   flex: 0 0 auto;
   width: 75%
 }
 
-.column-10 {
+.col-md-10 {
   flex: 0 0 auto;
   width: 83.33333333333334%
 }
 
-.column-11 {
+.col-md-11 {
   flex: 0 0 auto;
   width: 91.66666666666667%
 }
 
-.column-12 {
+.col-md-12 {
   flex: 0 0 auto;
   width: 100%
+}
+
+.container-box {
+  box-shadow: 0px 0px 3px #606060;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.full-height {
+  height: 100%;
 }

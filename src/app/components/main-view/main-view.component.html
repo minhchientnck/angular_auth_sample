@@ -1,4 +1,4 @@
-<div class="d-flex">
+<div class="d-flex full-height">
   <div class="side-bar-navs">
     <ul class="{{isExpand ? 'expand' : 'collapse'}}">
       <li title="Home">
@@ -6,49 +6,10 @@
           <fa-icon [icon]="faBars"></fa-icon>
         </a>
       </li>
-      <li title="Personal">
-        <a href="#personal" [class.active]="selectedTab === 'personal'" (click)="handleSelectNav('personal')">
-          <fa-icon [icon]="faUserTie"></fa-icon>
-          <span class="{{isExpand ? '' : 'hide'}}">Personal</span>
-        </a>
-      </li>
-      <li title="General Profile">
-        <a href="#general-profile" [class.active]="selectedTab === 'general-profile'"
-          (click)="handleSelectNav('general-profile')">
-          <fa-icon [icon]="faUsers"></fa-icon>
-          <span class="{{isExpand ? '' : 'hide'}}">General Profile</span>
-        </a>
-      </li>
-      <li title="Leave Management">
-        <a href="#leave-management" [class.active]="selectedTab === 'leave-management'" (click)="handleSelectNav('leave-management')">
-          <fa-icon [icon]="faChalkboardTeacher"></fa-icon>
-          <span class="{{isExpand ? '' : 'hide'}}">Leave Management</span>
-        </a>
-      </li>
-      <li title="Contact Detail">
-        <a href="#contact" [class.active]="selectedTab === 'contact'" (click)="handleSelectNav('contact')">
-          <fa-icon [icon]="faAddressCard"></fa-icon>
-          <span class="{{isExpand ? '' : 'hide'}}">Contact Detail</span>
-        </a>
-      </li>
-      <li title="Job History">
-        <a href="#job-history" [class.active]="selectedTab === 'job-history'" (click)="handleSelectNav('job-history')">
-          <fa-icon [icon]="faHistory"></fa-icon>
-          <span class="{{isExpand ? '' : 'hide'}}">Job History</span>
-        </a>
-      </li>
-      <li title="Upload Document">
-        <a href="#upload-document" [class.active]="selectedTab === 'upload-document'"
-          (click)="handleSelectNav('upload-document')">
-          <fa-icon [icon]="faFileUpload"></fa-icon>
-          <span class="{{isExpand ? '' : 'hide'}}">Upload Document</span>
-        </a>
-      </li>
-      <li title="Change Picture">
-        <a href="#change-picture" [class.active]="selectedTab === 'change-picture'"
-          (click)="handleSelectNav('change-picture')">
-          <fa-icon [icon]="faImages"></fa-icon>
-          <span class="{{isExpand ? '' : 'hide'}}">Change Picture</span>
+      <li *ngFor="let nav of NavBars" title="{{nav.label}}">
+        <a href="#{{nav.href}}" [class.active]="selectedTab === nav.href" (click)="handleSelectNav(nav.href)">
+          <fa-icon [icon]="nav.icon"></fa-icon>
+          <span class="{{isExpand ? '' : 'hide'}}">{{nav.label}}</span>
         </a>
       </li>
       <li title="logout">
@@ -59,13 +20,14 @@
       </li>
     </ul>
   </div>
-  <div class="container" (click)="closeNav()" [ngSwitch]="selectedTab">
-    <app-profile *ngSwitchDefault="'personal'"></app-profile>
-    <app-general-profile *ngSwitchCase="'general-profile'"></app-general-profile>
-    <app-leave-management *ngSwitchCase="'leave-management'"></app-leave-management>
-    <app-contact *ngSwitchCase="'contact'"></app-contact>
-    <app-job-history *ngSwitchCase="'job-history'"></app-job-history>
-    <app-upload-document *ngSwitchCase="'upload-document'"></app-upload-document>
-    <app-change-picture *ngSwitchCase="'change-picture'"></app-change-picture>
+  <div class="tab-content me-3" (click)="closeNav()" [ngSwitch]="selectedTab">
+    <app-profile *ngSwitchDefault></app-profile>
+    <app-profile *ngSwitchCase="NavBars[0].href"></app-profile>
+    <app-general-profile *ngSwitchCase="NavBars[1].href"></app-general-profile>
+    <app-leave-management *ngSwitchCase="NavBars[2].href"></app-leave-management>
+    <app-contact *ngSwitchCase="NavBars[3].href"></app-contact>
+    <app-job-history *ngSwitchCase="NavBars[4].href"></app-job-history>
+    <app-upload-document *ngSwitchCase="NavBars[5].href"></app-upload-document>
+    <app-change-picture *ngSwitchCase="NavBars[6].href"></app-change-picture>
   </div>
 </div>
